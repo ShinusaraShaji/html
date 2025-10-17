@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bulb Control</title>
+  <style>
+    .bulb {
+      width: 60px;
+      height: 100px;
+      margin: 10px;
+      background-color: #444; /* off state */
+      border-radius: 50% 50% 40% 40%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .on {
+      background-color: yellow;
+      box-shadow: 0 0 20px yellow;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bulb Controller</h2>
+
+  <div id="bulb-container">
+    <div class="bulb" id="bulb1"></div>
+    <div class="bulb" id="bulb2"></div>
+    <div class="bulb" id="bulb3"></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="turnOnAll()">Turn ON All</button>
+    <button onclick="turnOffAll()">Turn OFF All</button>
+    <button onclick="toggleBulb('bulb1')">Toggle Bulb 1</button>
+    <button onclick="toggleBulb('bulb2')">Toggle Bulb 2</button>
+    <button onclick="toggleBulb('bulb3')">Toggle Bulb 3</button>
+  </div>
+
+  <script>
+    // Turn on a single bulb
+    function turnOn(id) {
+      document.getElementById(id).classList.add("on");
+    }
+
+    // Turn off a single bulb
+    function turnOff(id) {
+      document.getElementById(id).classList.remove("on");
+    }
+
+    // Toggle a single bulb
+    function toggleBulb(id) {
+      document.getElementById(id).classList.toggle("on");
+    }
+
+    // Turn on all bulbs
+    function turnOnAll() {
+      turnOn("bulb1");
+      turnOn("bulb2");
+      turnOn("bulb3");
+    }
+
+    // Turn off all bulbs
+    function turnOffAll() {
+      turnOff("bulb1");
+      turnOff("bulb2");
+      turnOff("bulb3");
+    }
+  </script>
+
+</body>
+</html>

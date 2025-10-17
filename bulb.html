@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <title>Bomb ON/OFF</title>
+</head>
+<body>
+  <script>
+let isOn=false;
+    function turnOnOff() {
+      let image = document.getElementById("Image");
+if(isOn){
+      if (image.src.includes("C:\Users\MCETCSE\Documents\MCA S1\class.jpg")) {
+        image.src = "C:\Users\MCETCSE\Documents\MCA S1\class.jpg";
+      } else {
+        image.src = "C:\Users\MCETCSE\Documents\MCA S1\classes.jpg";
+      }
+    }
+  </script>
+  <img id="Image"
+  onclick="turnOnOff()"
+    src="C:\Users\MCETCSE\Documents\MCA S1\class.jpg"
+alt="bulb"
+width="200"/>
+  <p>Click on the BOMB to turn it ON and OFF</p>
+</body>
+</html>
